@@ -1,0 +1,17 @@
+# ads.txt
+#
+# Authorised Digital Sellers declaration for the randoo apps.
+#
+# AdMob requires this file at the ROOT of the developer site, reachable at
+# https://YOUR-SITE/ads.txt with no subfolder and no redirect. A file that is
+# missing, or placed anywhere else, means no ad fill and no revenue, and
+# nothing reports the problem.
+#
+# The seller id below is the one from the AdMob console:
+#   Settings -> Account information -> Seller ID
+#
+# It is a pub- value, in the form pub-XXXXXXXXXXXXXXXX.
+# Replace the placeholder below, commit, and confirm the file is live at the
+# root before shipping a release.
+
+google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
