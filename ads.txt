@@ -10,8 +10,16 @@
 # The seller id below is the one from the AdMob console:
 #   Settings -> Account information -> Seller ID
 #
-# It is a pub- value, in the form pub-XXXXXXXXXXXXXXXX.
-# Replace the placeholder below, commit, and confirm the file is live at the
-# root before shipping a release.
+# It is a pub- value, in the form pub-XXXXXXXXXXXXXXXX. It is the publisher ID
+# from AdMob's Settings -> Account -> Seller information, which is the same
+# number that appears inside the app's App ID:
+#
+#   ca-app-pub-5108703063436913~3733568661
+#   └──────┬──────┘
+#    publisher / seller ID
+#
+# The trailing value is Google's certification id, the same for every publisher.
+# Verify this file is live at https://randoo-tools.github.io/ads.txt before
+# shipping a release.
 
-google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+google.com, pub-5108703063436913, DIRECT, f08c47fec0942fa0
