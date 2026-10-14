@@ -10,18 +10,19 @@ Nothing here is code.
 
 ## Publishing
 
-GitHub Pages, from this repository's **Settings → Pages**, source **Deploy from a
-branch**, `/ (root)`, branch `main`. Once live:
+Published through GitHub Pages, from **Settings → Pages**, source **Deploy from
+a branch**, `/ (root)`, branch `main`.
 
-- policy: `https://randoo-tools.github.io/randoo-privacy/`
-- ads.txt: `https://randoo-tools.github.io/ads.txt`
+The repository is named `randoo-tools.github.io` on purpose. `ads.txt` has to
+live at the **root** of the domain, and a GitHub Pages site only does that when
+the repository is named after the account it serves. As a project site under
+`/randoo-privacy/` it would have been on the wrong path, which fails silently
+and means no ad fill and no revenue.
 
-Note the second one. `ads.txt` has to be at the **root** of the domain, not in
-this repository's subpath. A GitHub Pages *user* site is published from a
-`github.io` repository named after the account, and a *project* site lives under
-`/<repo>/`. Only the root path counts, so if the project URL is the one that works
-for you, this needs to move to a user site or a custom domain instead. Check
-where it actually resolves before shipping.
+So:
+
+- policy: <https://randoo-tools.github.io/>
+- ads.txt: <https://randoo-tools.github.io/ads.txt>
 
 ## Before publishing
 
