@@ -24,6 +24,42 @@ So:
 - policy: <https://randoo-tools.github.io/>
 - ads.txt: <https://randoo-tools.github.io/ads.txt>
 
+## `ads.txt`
+
+One line, no comments:
+
+```
+google.com, pub-5108703063436913, DIRECT, f08c47fec0942fa0
+```
+
+Kept to the record alone on purpose. The IAB spec permits `#` comment lines
+and the parser Google uses does ignore them, but the only consumer of this file
+is a machine at an ad exchange, and a naive one need not strip comments before
+validating. Nothing is gained by the prose here, so it lives in this file
+instead.
+
+Four fields, all required:
+
+| Field | Value | What it means |
+| --- | --- | --- |
+| Domain | `google.com` | the ad exchange's domain, not yours |
+| Seller ID | `pub-5108703063436913` | your publisher ID |
+| Relationship | `DIRECT` | you own the inventory and are paid by Google |
+| Certification | `f08c47fec0942fa0` | Google's own id, identical for every publisher |
+
+The seller ID is the same number that sits inside the app's AdMob App ID, which
+is why it can be read either way:
+
+```
+ca-app-pub-5108703063436913~3733568661
+    └──────┬──────┘
+     publisher / seller ID
+```
+
+It is public. Google lists every AdMob seller, including confidential ones, in
+its published `sellers.json`. Nothing secret is in this file, which is why it can
+live in a public repository and why the file has to be publicly readable at all.
+
 ## Before publishing
 
 1. Replace `pub-0000000000000000` in `ads.txt` with the real seller id from the
