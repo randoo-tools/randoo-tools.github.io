@@ -28,7 +28,9 @@ So:
 
 1. Replace `pub-0000000000000000` in `ads.txt` with the real seller id from the
    AdMob console (Settings → Account information → Seller ID).
-2. Replace `privacy@randoo.app` in `index.html` with an address you read.
+2. The contact address is `randoo-privacy@merandoo.com`. It is deliberately
+   separate from any other app family under `merandoo.com`: ads change what a
+   privacy answer looks like, and a shared inbox would answer the wrong question.
 3. Re-read the policy against the current app. It describes what the code
    actually does; if the dependencies change, the policy has to change with them.
 4. Keep the Play Console data safety form consistent with it. A policy and a
