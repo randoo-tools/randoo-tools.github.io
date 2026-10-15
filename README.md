@@ -1,4 +1,4 @@
-# randoo-privacy
+# randoo-tools.github.io
 
 Public legal pages for the [randoo](../randoo-tools) family of Android apps.
 Nothing here is code.
@@ -7,7 +7,8 @@ Nothing here is code.
 | --- | --- |
 | `index.html` | The landing page, and the table of policies. Not itself a policy. |
 | `<app>.html` | One privacy policy per app. Play needs a URL per listing, and each app has its own data practices. |
-| `ads.txt` | AdMob's Authorised Digital Sellers declaration. Required for ads to fill at all. Account level: one seller id covers every app, so this is the one file that is *not* per app. |
+| `app-ads.txt` | The Authorised Digital Sellers declaration AdMob actually crawls for these apps. Account level: one seller id covers every app, so this is the one file that is *not* per app. |
+| `ads.txt` | The same declaration for a website. Nothing here serves ads, so it is inert; kept only because the domain exists. |
 
 ## One policy per app
 
@@ -27,20 +28,27 @@ wrong URL from a listing; there is now no page that could be mistaken for an app
 Published through GitHub Pages, from **Settings → Pages**, source **Deploy from
 a branch**, `/ (root)`, branch `main`.
 
-The repository is named `randoo-tools.github.io` on purpose. `ads.txt` has to
-live at the **root** of the domain, and a GitHub Pages site only does that when
-the repository is named after the account it serves. As a project site under
-`/randoo-privacy/` it would have been on the wrong path, which fails silently
-and means no ad fill and no revenue.
+The repository is named `randoo-tools.github.io` on purpose. `app-ads.txt` has to
+live at the **root** of the developer website domain, and a GitHub Pages site only
+does that when the repository is named after the account it serves. As a project
+site under `/randoo-privacy/` it would have been on the wrong path, and AdMob
+would simply find no declaration.
 
 So:
 
 - policy: <https://randoo-tools.github.io/>
-- ads.txt: <https://randoo-tools.github.io/ads.txt>
+- app-ads.txt: <https://randoo-tools.github.io/app-ads.txt>
 
-## `ads.txt`
+## `app-ads.txt` and `ads.txt`
 
-One line, no comments:
+`app-ads.txt` is the one that matters here. Google crawls it for **apps**, and it
+has to sit at the root of the domain entered as the **developer website** in the
+Play listing. It is not mandatory, but without it the app serves at reduced
+advertiser demand, and there is nothing to stop someone copying the app and
+selling its inventory as their own. `ads.txt` is the website equivalent; since
+nothing here serves ads, that file is inert.
+
+Both hold the single line below, with no comments:
 
 ```
 google.com, pub-5108703063436913, DIRECT, f08c47fec0942fa0
@@ -80,13 +88,19 @@ live in a public repository and why the file has to be publicly readable at all.
 
 ## Before publishing
 
-1. Replace `pub-0000000000000000` in `ads.txt` with the real seller id from the
-   AdMob console (Settings → Account information → Seller ID).
-2. The contact address is `randoo-privacy@merandoo.com`. It is deliberately
+1. Set the **developer website** in the Play listing to
+   <https://randoo-tools.github.io> exactly. This is the domain AdMob reads to
+   find `app-ads.txt`, so a different URL there means the declaration is never
+   found. The seller id in `app-ads.txt` and `ads.txt` is already live; it is
+   `pub-5108703063436913`.
+2. Give AdMob up to 24 hours to crawl `app-ads.txt` after that, then check the
+   app-ads.txt status in the AdMob console. It is not instant, and a missing file
+   is not reported as an error, only as absent.
+3. The contact address is `randoo-privacy@merandoo.com`. It is deliberately
    separate from any other app family under `merandoo.com`: ads change what a
    privacy answer looks like, and a shared inbox would answer the wrong question.
-3. Re-read the policy against the current app. It describes what the code
+4. Re-read the policy against the current app. It describes what the code
    actually does; if the dependencies change, the policy has to change with them.
-4. Keep the Play Console data safety form consistent with it. A policy and a
+5. Keep the Play Console data safety form consistent with it. A policy and a
    data safety declaration that disagree are the kind of thing that gets an
    app reviewed.
