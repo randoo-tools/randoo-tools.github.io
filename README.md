@@ -13,12 +13,20 @@ Nothing here is code.
 ## One policy per app
 
 They look almost identical, and that is deliberate: the apps share a toolkit, so their
-behaviour is the same. What differs is whether that app shows ads, and that difference has to
-be exact. A page describing ad tracking for an app that shows none is a wrong policy for that
-app, and it is the kind of thing a Play reviewer checks against the listing.
+behaviour is the same. Three things differ, and each has to be right:
 
-So the rule is: copy the text, change only the advertising section, and keep everything else
-byte-identical. If they ever describe different behaviour, something has gone wrong upstream.
+- **Name and package.** The header names the app and its package. The package is the stable
+  half: the store name can be changed in Play, the package cannot, so a rename means editing
+  the page and its date.
+- **What the app stores.** They share a settings store, but not every app keeps history.
+  Coin Flip saves its last 100 flips, Shopping List saves your list, Dice Roller keeps its
+  roll history in memory only, and Calculator and Utility Pack save settings alone.
+- **The advertising section**, where the app name appears in the first line of section 4.
+  All five apps show ads, so here too only the name differs.
+
+Everything else is byte-identical. A page that claims stored history, or ads, for an app that
+has neither is a wrong policy for that app, and it is the kind of thing a Play reviewer checks
+against the listing.
 
 Keep `index.html` as an index only. When Coin Flip had a policy here, it was easy to link the
 wrong URL from a listing; there is now no page that could be mistaken for an app's policy.
