@@ -20,9 +20,11 @@ behaviour is the same. Three things differ, and each has to be right:
   the page and its date.
 - **What the app stores.** They share a settings store, but not every app keeps history.
   Coin Flip saves its last 100 flips, Shopping List saves your list, Dice Roller keeps its
-  roll history in memory only, and Calculator and Utility Pack save settings alone.
+  roll history in memory only, Calculator and Utility Pack save settings alone, and
+  Mini TD: Tower Defense saves on-device game progress (coins, gold, upgrades, waves).
 - **The advertising section**, where the app name appears in the first line of section 4.
-  All five apps show ads, so here too only the name differs.
+  All six apps show ads, so here too only the name differs (Tower Defense notes that its
+  ads are optional rewarded videos).
 
 Everything else is byte-identical. A page that claims stored history, or ads, for an app that
 has neither is a wrong policy for that app, and it is the kind of thing a Play reviewer checks
